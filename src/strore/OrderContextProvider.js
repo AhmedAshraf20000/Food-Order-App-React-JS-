@@ -60,7 +60,7 @@ const orderReducer = (state, action) => {
 
 const OrdersContextProvider = (props) => {
     const [ordersState, ordersDispatch] = useReducer(orderReducer, defaultOrders);
-    console.log(ordersState);
+
     const addItemHandler = (item) => {
         ordersDispatch({ type: 'ADD', order: item });
     }

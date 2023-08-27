@@ -1,7 +1,7 @@
 import { createPortal } from "react-dom";
 import ModalItem from "./ModalItem";
 import OrdersContext from "../../strore/order-context";
-import { useContext } from "react";
+import { memo, useContext } from "react";
 
 const Modal = (props) => {
     const ctx = useContext(OrdersContext);
@@ -39,4 +39,4 @@ const CartModal = (props) => {
     );
 }
 
-export default CartModal;
+export default memo(CartModal);

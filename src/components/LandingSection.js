@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 const LandingSesction = () => {
     return (
         <section className="landing-section bg-meals-image bg-center py-12 bg-no-repeat bg-cover relative z-10 md:after:bg-gray-800 top-16 md:after:absolute md:after:w-full md:after:h-full md:after:-z-[1] md:after:bottom-0 md:after:contents[''] ">
@@ -11,4 +13,4 @@ const LandingSesction = () => {
     );
 };
 
-export default LandingSesction;
+export default memo(LandingSesction);

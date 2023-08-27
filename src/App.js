@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import Header from "./components/Header";
 import LandingSesction from "./components/LandingSection";
 import Menu from "./components/Menu/Menu";
@@ -8,9 +8,9 @@ import OrdersContextProvider from "./strore/OrderContextProvider";
 const App = () => {
   const [openModal, setOpenModal] = useState(false);
 
-  const modalOpenHandler = () => setOpenModal(true);
+  const modalOpenHandler = useCallback(() => setOpenModal(true), []);
 
-  const modalCloseHandler = () => setOpenModal(false);
+  const modalCloseHandler = useCallback(() => setOpenModal(false), []);
 
   return (
     <OrdersContextProvider>

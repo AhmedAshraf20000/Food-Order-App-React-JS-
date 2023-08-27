@@ -1,7 +1,7 @@
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import OrdersContext from "../strore/order-context";
-import { useContext, useEffect, useState } from "react";
+import { memo, useContext, useEffect, useState } from "react";
 
 const Header = (props) => {
     const [animate, setAnimate] = useState(false);
@@ -37,4 +37,4 @@ const Header = (props) => {
     );
 };
 
-export default Header;
+export default memo(Header);

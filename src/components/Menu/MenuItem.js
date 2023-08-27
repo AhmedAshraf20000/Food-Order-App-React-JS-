@@ -1,11 +1,11 @@
-import { useContext, useRef } from "react";
+import { memo, useCallback, useContext, useRef } from "react";
 import OrdersContext from "../../strore/order-context";
 
 const MenuItem = (props) => {
     const inputRef = useRef();
     const ctx = useContext(OrdersContext);
 
-    const clickButtonHandler = () => {
+    const clickButtonHandler = useCallback(() => {
         ctx.addItem({
             id: props.id,
             title: props.title,
@@ -13,7 +13,7 @@ const MenuItem = (props) => {
             price: props.price
         })
         inputRef.current.value = 1;
-    }
+    }, [ctx, props.id, props.price, props.title])
 
     return (
         <div className="flex md:justify-between py-2 flex-wrap justify-center md:flex-nowrap text-center md:text-left gap-3 md:gap-0 ">
@@ -24,11 +24,11 @@ const MenuItem = (props) => {
             </div>
             <div>
                 <label className="font-bold mr-2" htmlFor={`orderNumber${props.id}`}>Amount</label>
-                <input type="number" id={`orderNumber${props.id}`} className="border border-opacity-40 border-black w-7" defaultValue={1} ref={inputRef} min={1} max={5}/>
+                <input type="number" id={`orderNumber${props.id}`} className="border border-opacity-40 border-black w-7" defaultValue={1} ref={inputRef} min={1} max={5} />
                 <button onClick={clickButtonHandler} className="bg-red-800 border w-full border-red-800 text-white hover:bg-white hover:text-red-800 px-5 py-1 block mt-4 rounded-full">+ Add</button>
             </div>
         </div>
     );
 };
 
-export default MenuItem;
+export default memo(MenuItem);

@@ -7,5 +7,18 @@ body {
 }
 
 .landing-section::after {
-  clip-path: polygon(66% 76%, 4% 100%, 100% 100%, 100% 66%); 
+  clip-path: polygon(66% 76%, 4% 100%, 100% 100%, 100% 66%);
 }
+
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-white rounded-md;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-md bg-slate-500 hover:bg-slate-700;
+}
+

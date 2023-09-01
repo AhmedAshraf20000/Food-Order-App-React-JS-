@@ -5,6 +5,7 @@ const OrdersContext = createContext({
     orders: [],
     addItem: (item) => { },
     removeItem: (id) => { },
+    clearCart: () => { }
 });
 
 export default OrdersContext;

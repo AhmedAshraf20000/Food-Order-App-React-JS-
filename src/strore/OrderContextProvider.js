@@ -55,6 +55,11 @@ const orderReducer = (state, action) => {
             totalAmount: updatedTotalAmount,
         };
     }
+
+    if (action.type === 'CLEAR') {
+        return defaultOrders;
+    }
+    
     return defaultOrders;
 }
 
@@ -69,12 +74,17 @@ const OrdersContextProvider = (props) => {
         ordersDispatch({ type: 'REMOVE', id: id })
     }
 
+    const clearCartHandler = () => {
+        ordersDispatch({ type: 'CLEAR' });
+    }
+
     return (
         <OrdersContext.Provider value={{
             totalAmount: ordersState.totalAmount,
             orders: ordersState.ordersArr,
             addItem: addItemHandler,
             removeItem: removeItemHandler,
+            clearCart: clearCartHandler
         }} >
             {props.children}
         </OrdersContext.Provider >

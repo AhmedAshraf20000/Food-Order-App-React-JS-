@@ -18,7 +18,7 @@ const ModalItem = (props) => {
     }
 
     return (
-        <div className="flex md:justify-between items-center border-b border-red-800 py-3 flex-wrap md:flex-nowrap gap-2 md:gap-0 justify-center text-center md:text-left">
+        <div className="flex items-center border-b border-red-800 py-3 flex-wrap md:flex-nowrap gap-2 md:gap-0 justify-center text-center md:text-left sm:justify-between">
             <div>
                 <h2 className="capitalize font-bold text-lg mb-2">{props.title}</h2>
                 <span className="text-red-800 font-bold">${props.price.toFixed(2)}</span>

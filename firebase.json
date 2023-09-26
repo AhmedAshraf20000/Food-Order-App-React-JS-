@@ -12,7 +12,7 @@
         "headers": [
           {
             "key": "Access-Control-Allow-Origin",
-            "value": "https://food-order-app-react-js.vercel.app"
+            "value": "https://food-order-app-react-js.vercel.app/"
           }
         ]
       }
